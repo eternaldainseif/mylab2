@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <form ng-app="countryCities" ng-controller="MainController" name="myForm">
+    <h1>{{message}}</h1>
+
+    <p>
+      <input type="text" name="country" ng-model="countryCities" value="Country" required />
+      <span style="color:red" ng-show="myForm.country.$dirty && myForm.country.$invalid">
+      <span ng-show="myForm.country.$error.required">Country is required.</span>
+      </span>
+    </p>
+    <p>List of Countries:</p>
+    <ul>
+      <li ng-repeat="country in countries | filter:countryCities | orderBy:'-country'">
+        {{country.country}}, {{country.city}}
+      </li>
+    </ul>
+  </form>
+</body>
+
+</html>
