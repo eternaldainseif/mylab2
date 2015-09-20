@@ -1,0 +1,11 @@
+<div class="container">
+  <h2> View All Students Name(lowercase) & Age </h2> Display All:
+
+  <ul>
+    <li ng-repeat="student in students" >
+      {{student.name | lowercase}} , {{student.age}}
+    </li>
+  </ul>
+
+  <a href="#/home"> Back</a>
+</div>

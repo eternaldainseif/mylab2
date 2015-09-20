@@ -1,0 +1,13 @@
+<div class="container">
+  <h2> View All Students </h2>
+  
+   <input type="text" name="student" ng-model="student.name" value="Student" required />
+   <p>List of Students:</p>
+  <ul>
+    <li ng-repeat="student in students | filter:student.name">
+      {{student.name}} , {{student.age}} , {{student.gender}}
+    </li>
+  </ul>
+
+  <a href="#/home"> Back</a>
+</div>
